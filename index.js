@@ -112,7 +112,11 @@ function wrap(superagent, Promise) {
 
   /** Helper for making a delete request */
   request.del = function(url) {
-    return request('DELETE', url);
+    var req = request('DELETE', url);
+    if (data) {
+      req.send(data);
+    }
+    return req;
   };
 
   // Export the request builder
