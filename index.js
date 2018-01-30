@@ -111,7 +111,7 @@ function wrap(superagent, Promise) {
   };
 
   /** Helper for making a delete request */
-  request.del = function(url) {
+  request.del = function(url, data) {
     var req = request('DELETE', url);
     if (data) {
       req.send(data);
